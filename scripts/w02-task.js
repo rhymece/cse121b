@@ -15,16 +15,18 @@ let imageElement = document.querySelector("img");
 
 /* Step 4 - Adding Content */
 nameElement.innerHTML = `<strong>${fullname}</strong>`;
+yearElement.textContent = `${currentYear}`;
 imageElement.setAttribute("src", profilePicture);
-imageElement.setAttribute("alt", `Profile image of ${fullname}`)
+imageElement.setAttribute("alt", `Profile image of ${fullname}`);
+
 
 
 /* Step 5 - Array */
-let foodArray = ["Chicken Adobo"," Cheese Pizza", " Spaghetti", " Cheese Cake"]
+let foodArray = ["Chicken Adobo"," Cheese Pizza", " Spaghetti", " Cheese Cake"];
 foodElement.innerHTML = `${foodArray}`;
 
 let extraFavFood = " Caesar Salad";
-foodArray.push(extraFavFood)
+foodArray.push(extraFavFood);
 foodElement.innerHTML += `<br>${foodArray}`;
 
 foodArray.shift();

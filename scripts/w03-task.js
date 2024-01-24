@@ -67,7 +67,7 @@ getTotalDue = () => {
     let checkBox = document.querySelector("#member");
 
     if (checkBox.checked == true){
-        subTotalInput = subTotalInput - (subTotalInput * 0.15)
+        subTotalInput = subTotalInput - (subTotalInput * 0.20)
     }
     subTotalInput = subTotalInput.toFixed(2);
     totalValue.innerHTML = subTotalInput;

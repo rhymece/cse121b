@@ -41,6 +41,7 @@ myName.innerHTML = myProfile.name;
 /* Photo with attributes */
 let myProfileElement = document.querySelector("#photo");
 myProfileElement.setAttribute("src", myProfile.photo);
+myProfileElement.setAttribute("alt", `${myProfile.name} profile picture!`)
 
 /* Favorite Foods List*/
 

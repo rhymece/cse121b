@@ -5,6 +5,7 @@ let templeList = [];
 const url = "https://byui-cse.github.io/cse121b-ww-course/resources/temples.json";
 
 
+
 /* async displayTemples Function */
 const displayTemples = (temples) => {
     temples.forEach(temple => {

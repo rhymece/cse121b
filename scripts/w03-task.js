@@ -62,7 +62,7 @@ divideButtonBox.addEventListener("click", divideNumbers);
 
 let totalValue = document.querySelector("#total");
 
-getTotalDue = () => {
+getTotalDue = () => { 
     let subTotalInput = Number(document.querySelector("#subtotal").value);
     let checkBox = document.querySelector("#member");
 

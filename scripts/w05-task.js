@@ -64,6 +64,7 @@ function filterTemples(temples) {
 
          case "all":
             displayTemples(temples);
+            break;
     }
 };
 

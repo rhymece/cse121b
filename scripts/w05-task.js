@@ -74,3 +74,4 @@ getTemples();
 /* Event Listener */
 const selection = document.querySelector("#filtered");
 selection.addEventListener("change", () => {filterTemples(templeList)});
+//selection.addEventListener("change", filterTemples(templeList));

@@ -254,7 +254,7 @@ footer {
     margin-bottom: 3rem;
 }
 
-#temples article {
+#temples article, #movies article {
     height: 250px;
     margin: .5rem;
     border: 1px solid rgba(0, 0, 0, .1);
@@ -266,13 +266,13 @@ footer {
     justify-content: center;
 }
 
-#temples h4 {
+#temples h4, #movies h4 {
     color: navy;
     font-size: smaller;
 }
 
 
-#temples img {
+#temples img, #movies img {
     width: 250px;
     height: auto;
     box-shadow: 0 0 30px #777;

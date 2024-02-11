@@ -24,22 +24,29 @@
       <li><a href="project.html">Project</a></li>
     </ul>
   </nav>
-  <main id="home">
-    <picture>
-      <img src="images/placeholder.png" alt="Placeholder Image">
-    </picture>
-    <section>
-      <h1>About Me</h1>
-      <div class="info">Name: <span id="name"></span></div>
-      <h2>Favorite Food</h2>
-      <div class="block" id="food"></div>
-    </section>
+  <main id="gridly">
+    <h1>Final Project</h1>
+    <h2>Movie Database</h2>
+
+    <select id="filtered" title="Choose a data filter.">
+      <option value="" disabled selected>Filter Movies</option>
+      <option value="action">Action</option>
+      <option value="comedy">Comedy</option>
+      <option value="horror">Horror</option>
+      <option value="drama">Drama</option>
+      <option value="history">History</option>
+      <option value="adventure">Adventure</option>
+    </select>
+
+    <div id="movies">
+    </div>
   </main>
+
   <footer>
     &copy;<span id="year"></span> | About Me | CSE 121b
   </footer>
   <script src="scripts/main.js"></script>
-  <script src="scripts/w02-task.js"></script>
+  <script src="scripts/project.js"></script>
 </body>
 
 </html>

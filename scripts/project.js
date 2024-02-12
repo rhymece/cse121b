@@ -1,4 +1,4 @@
-const url = "https://rhymece.github.io/cse121b/project.json";
+const movieUrl = "https://rhymece.github.io/cse121b/project.json";
 let movieList = []
 const movieElement = document.querySelector("#movies")
 
@@ -31,7 +31,7 @@ const displayMovies = (movies) => {
 }
 
 const getMovies = async () => {
-    const response = await fetch(url);
+    const response = await fetch(movieUrl);
     if (response.ok) {
         movieList = await response.json();
         displayMovies(movieList);
@@ -50,11 +50,13 @@ function movieFilter(movies) {
     let filter = document.querySelector("filtered").value;
     switch(filter){
         case "action": 
-        const actionmovie = movies.filter((movie) => movie.Title.includes("action"));
-        displayMovies(actionmovie);
+        const actionMovie = movies.filter((movie) => movie.Title.includes("action"));
+        displayMovies(actionMovie);
+        break;
         
         case "all":
         displayMovies(movies);
+        break;
     }
 
 

@@ -50,19 +50,34 @@ function movieFilter(movies) {
     let filter = document.querySelector("filtered").value;
     switch(filter){
         case "action": 
-        const actionMovie = movies.filter((movie) => movie.Genre.includes("action"));
-        displayMovies(actionMovie);
-        break;
+            const actionMovie = movies.filter((movie) => movie.Genre.includes("action"));
+            displayMovies(actionMovie);
+            break;
 
         case "comedy":
-        const comedyMovie = movies.filter((movie) => movie.Genre.includes("comedy"));
-        displayMovies(comedyMovie);
-        break;
+            const comedyMovie = movies.filter((movie) => movie.Genre.includes("comedy"));
+            displayMovies(comedyMovie);
+            break;
 
         case "horror":
-        const horrorMovie = movies.filter((movie) => movie.Genre.includes("horror"));
-        displayMovies(horrorMovie);
-        break;
+            const horrorMovie = movies.filter((movie) => movie.Genre.includes("horror"));
+            displayMovies(horrorMovie);
+            break;
+
+        case "drama":
+            const dramaMovie = movies.filter((movie) => movie.Genre.includes("drama"));
+            displayMovies(dramaMovie);
+            break;
+        
+        case "history":
+            const historyMovie = movies.filter((movie) => movie.Genre.includes("history"));
+            displayMovies(historyMovie);
+            break;
+
+        case "adventure":
+            const adventureMovie = movies.filter((movie) => movie.Genre.includes("adventure"));
+            displayMovies(adventureMovie);
+            break;
         
         case "all":
         displayMovies(movies);

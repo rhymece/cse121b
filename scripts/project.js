@@ -50,8 +50,17 @@ function movieFilter(movies) {
     let filter = document.querySelector("filtered").value;
     switch(filter){
         case "action": 
-        const actionMovie = movies.filter((movie) => movie.Title.includes("action"));
+        const actionMovie = movies.filter((movie) => movie.Genre.includes("action"));
         displayMovies(actionMovie);
+        break;
+
+        case "comedy":
+        const comedyMovie = movies.filter((movie) => movie.Genre.includes("comedy"));
+        displayMovies(comedyMovie);
+        break;
+
+        case "horror":
+        const horrorMovie = movies.filter((movie) => movie.Genre.includes("horror"));
         break;
         
         case "all":
@@ -63,6 +72,7 @@ function movieFilter(movies) {
 }
 
 getMovies();
+
 const choice = document.querySelector("#filtered");
 choice.addEventListener("change", ()=> {
     displayMovies(movieList);

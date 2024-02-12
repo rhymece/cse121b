@@ -61,6 +61,7 @@ function movieFilter(movies) {
 
         case "horror":
         const horrorMovie = movies.filter((movie) => movie.Genre.includes("horror"));
+        displayMovies(horrorMovie);
         break;
         
         case "all":

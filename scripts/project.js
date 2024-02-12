@@ -48,8 +48,8 @@ function movieFilter(movies) {
     
     reset();
 
-    let filter = document.querySelector("filtered").value;
-    switch(filter){
+    let filterValue = document.querySelector("#filteredValue").value;
+    switch(filterValue){
         case "action": 
             const actionMovie = movies.filter((movie) => movie.Genre.includes("action"));
             displayMovies(actionMovie);
@@ -90,7 +90,7 @@ function movieFilter(movies) {
 
 getMovies();
 
-const choice = document.querySelector("#filtered");
+const choice = document.querySelector("#filteredValue");
 choice.addEventListener("change", ()=> {
     movieFilter(movieList);
 })

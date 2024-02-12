@@ -45,6 +45,7 @@ function reset() {
 }
 
 function movieFilter(movies) {
+    
     reset();
 
     let filter = document.querySelector("filtered").value;
@@ -91,5 +92,5 @@ getMovies();
 
 const choice = document.querySelector("#filtered");
 choice.addEventListener("change", ()=> {
-    displayMovies(movieList);
+    movieFilter(movieList);
 })

@@ -45,9 +45,7 @@ function reset() {
 }
 
 function movieFilter(movies) {
-    
     reset();
-
     let filterValue = document.querySelector("#filteredValue").value;
     switch(filterValue){
         case "action": 
@@ -84,13 +82,29 @@ function movieFilter(movies) {
         displayMovies(movies);
         break;
     }
-
-
 }
+
+function searchFilter(movies) {
+    reset();
+    let searchValue = document.querySelector("#searchInput").value;
+    const selectedMovie = movies.filter((movie) => movie.Title.includes(searchValue));
+    displayMovies(selectedMovie);
+}
+
+
 
 getMovies();
 
 const choice = document.querySelector("#filteredValue");
 choice.addEventListener("change", ()=> {
     movieFilter(movieList);
+});
+
+let search = document.querySelector("#searchInput");
+search.addEventListener("keypress", function(event){
+    if (event.key === "Enter"){
+        event.preventDefault();
+        searchFilter(movieList);
+    }
 })
+

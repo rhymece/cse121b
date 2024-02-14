@@ -284,6 +284,12 @@ footer {
     margin: .5rem;
 }
 
+#searchInput {
+    margin: 1rem 0;
+    color: #000;
+    border: 1px solid #000;
+}
+
 /* Media Queries */
 @media only screen and (min-width: 32.5em) {
     nav ul {

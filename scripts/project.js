@@ -87,6 +87,7 @@ function movieFilter(movies) {
 function searchFilter(movies) {
     reset();
     let searchValue = document.querySelector("#searchInput").value;
+    searchValue = searchValue[0].toUpperCase() + searchValue.slice(1);
     const selectedMovie = movies.filter((movie) => movie.Title.includes(searchValue));
     displayMovies(selectedMovie);
 }

@@ -17,13 +17,19 @@ const displayMovies = (movies) => {
         let h4Year = document.createElement("h4");
         h4Year.textContent = movie.Year;
         
-        let h4 = document.createElement("h4");
-        h4.textContent = movie.Genre;
+        let h4Genre = document.createElement("h4");
+        h4Genre.textContent = movie.Genre;
+
+        let btn = document.createElement("button");
+        btn.value = movie.Title;
+        btn.classList = "btnSelect"
+        btn.textContent = "More Details...";
 
         article.appendChild(imageElement);
         article.appendChild(h3Title);
         article.appendChild(h4Year);
-        article.appendChild(h4);
+        article.appendChild(h4Genre);
+        article.appendChild(btn);
         
         movieElement.appendChild(article);
     });
@@ -96,12 +102,51 @@ function movieFilter(movies) {
     }
 }
 
+const displayClickMovie = (movies) => {
+    
+    movies.forEach(movie => {
+       
+        let clickArticle = document.createElement("article");
+        let clickImage = document.createElement("img");
+        let h3 = document.createElement("h3");
+        let h4Year = document.createElement("h4");
+        let h4Rated = document.createElement("h4");
+        let h4Genre = document.createElement("h4")
+        
+        clickImage.setAttribute("src", movie.Poster);
+        clickImage.setAttribute("alt", movie.Title);
+        h3.textContent = movie.Title;
+        h4Year.textContent = movie.Year;
+        h4Rated.textContent = movie.Rated;
+        h4Genre.textContent = movie.Genre;
+
+        clickArticle.appendChild(image);
+        clickArticle.appendChild(h3);
+        clickArticle.appendChild(h4Year);
+        clickArticle.appendChild(h4Genre);
+        clickArticle.appendChild(h4Rated);
+
+        resultElement.appendChild(article);
+
+    });
+}
+
+function clickFilter(movies) {
+    reset();
+    let btnValue = document.getElementsByTagName("button").value;
+    
+    const clickMovie = movies.forEach(movie => {
+        if (btnValue === movie.Title){
+            displayClickMovie(clickMovie);
+        }
+    })
+}
+
 function searchFilter(movies) {
     reset();
     let searchValue = document.querySelector("#searchInput").value;
     searchValue = searchValue[0].toUpperCase() + searchValue.slice(1);
     const selectedMovie = movies.filter((movie) => movie.Title.includes(searchValue));
-    //console.log(selectedMovie.length);
     
     if (selectedMovie.length === 0){
         let article = document.createElement("article");
@@ -113,12 +158,8 @@ function searchFilter(movies) {
 
     } else {
         displayMovies(selectedMovie);
-    }
-    
-    
+    } 
 }
-
-
 
 getMovies();
 
@@ -134,4 +175,7 @@ search.addEventListener("keypress", function(event){
         searchFilter(movieList);
     }
 })
+
+let btnClick = document.querySelector(".btnSelect");
+btnClick.addEventListener("click", clickFilter(movieList));
 

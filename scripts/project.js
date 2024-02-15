@@ -1,6 +1,7 @@
 const movieUrl = "https://rhymece.github.io/cse121b/project.json";
 let movieList = []
-const movieElement = document.querySelector("#movies")
+const movieElement = document.querySelector("#movies");
+const resultElement = document.querySelector("#result");
 
 const displayMovies = (movies) => {
     movies.forEach(movie => {
@@ -25,8 +26,6 @@ const displayMovies = (movies) => {
         article.appendChild(h4);
         
         movieElement.appendChild(article);
-
-
     });
 }
 
@@ -42,10 +41,18 @@ function reset() {
     while (movieElement.hasChildNodes()){
         movieElement.removeChild(movieElement.firstChild);
     }
+    while (resultElement.hasChildNodes()){
+        resultElement.removeChild(resultElement.firstChild);
+    }
+}
+
+function resetInput() {
+    document.querySelector("#searchInput").value = "";
 }
 
 function movieFilter(movies) {
     reset();
+    resetInput()
     let filterValue = document.querySelector("#filteredValue").value;
     switch(filterValue){
         case "action": 
@@ -89,7 +96,21 @@ function searchFilter(movies) {
     let searchValue = document.querySelector("#searchInput").value;
     searchValue = searchValue[0].toUpperCase() + searchValue.slice(1);
     const selectedMovie = movies.filter((movie) => movie.Title.includes(searchValue));
-    displayMovies(selectedMovie);
+    //console.log(selectedMovie.length);
+    
+    if (selectedMovie.length === 0){
+        let article = document.createElement("article");
+        let h4 = document.createElement("h4");
+
+        h4.textContent = "No results found!";
+        article.appendChild(h4);
+        resultElement.appendChild(article);
+
+    } else {
+        displayMovies(selectedMovie);
+    }
+    
+    
 }
 
 

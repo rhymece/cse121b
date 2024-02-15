@@ -85,6 +85,21 @@ h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
 }
+#gridly {
+    position: relative;
+}
+#filteredValue, #searchButton {
+    display: inline;
+}
+
+#filteredValue {
+    position: absolute;
+    left: 1rem;
+}
+#searchButton {
+   position: absolute;
+   right: 7rem;
+}
 
 #movies h3 {
     font-size: 1.5rem;
@@ -259,6 +274,15 @@ footer {
     margin-bottom: 3rem;
 }
 
+#movies {
+    margin-top: 5rem;
+}
+
+#result {
+    margin: auto;
+    text-align: center;
+}
+
 #temples article {
     height: 250px;
     margin: .5rem;
@@ -321,6 +345,11 @@ footer {
         grid-gap: 5px;
         margin: 0 auto;
         max-width: 950px;
+    }
+    #searchButton {
+        position: absolute;
+        left: 1rem;
+        margin-top: 1rem;
     }
 
 }

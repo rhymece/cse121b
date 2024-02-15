@@ -85,6 +85,11 @@ function movieFilter(movies) {
             displayMovies(adventureMovie);
             break;
         
+        case "fantasy":
+            const fantasyMovie = movies.filter((movie) => movie.Genre.includes("Fantasy"));
+            displayMovies(fantasyMovie);
+            break;
+        
         case "all":
         displayMovies(movies);
         break;

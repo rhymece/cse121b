@@ -6,6 +6,7 @@ const resultElement = document.querySelector("#result");
 const displayMovies = (movies) => {
     movies.forEach(movie => {
         let article = document.createElement("article");
+        article.classList = "movieArticle";
         
         let imageElement = document.createElement("img");
         imageElement.setAttribute("src", movie.Poster);
@@ -21,8 +22,7 @@ const displayMovies = (movies) => {
         h4Genre.textContent = movie.Genre;
 
         let btn = document.createElement("button");
-        btn.value = movie.Title;
-        btn.classList = "btnSelect"
+        btn.id = movie.Id;
         btn.textContent = "More Details...";
 
         article.appendChild(imageElement);
@@ -133,8 +133,8 @@ const displayClickMovie = (movies) => {
 
 function clickFilter(movies) {
     reset();
-    let btnValue = document.getElementsByTagName("button").value;
-    
+    let btnValue = document.getElementsByTagName("button");
+    console.log(btnValue.value);
     const clickMovie = movies.forEach(movie => {
         if (btnValue === movie.Title){
             displayClickMovie(clickMovie);
@@ -176,6 +176,11 @@ search.addEventListener("keypress", function(event){
     }
 })
 
-let btnClick = document.querySelector(".btnSelect");
-btnClick.addEventListener("click", clickFilter(movieList));
+//let parent = document.querySelector("#movies");
+//let child = parent.querySelector(".movieArticle");
+//let grandchild = child.querySelector(".btnSelect")
+//grandchild.addEventListener("click", reset());
+
+
+
 
